@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: os-project
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: eslam
+
+  template:
+    metadata:
+      name: web-app
+      labels:
+        app: eslam
+    spec:
+      containers:
+      - image: eslammo11/os-project
+        name: eslammo11
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1"
+  
